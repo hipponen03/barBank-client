@@ -19,6 +19,11 @@
         return await post(`auth/getTransactions`)
     }
 </script>
+
+<svelte:head>
+    <title>Overview • barBank</title>
+</svelte:head>
+
 {#if process.browser}
     {#await getMyData()}
         Loading...

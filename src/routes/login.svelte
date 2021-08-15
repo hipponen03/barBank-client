@@ -13,11 +13,11 @@
     let username = '';
     let password = '';
     let error = null;
+
     async function submit(event) {
         const response = await post(`auth/login`, {username, password});
         // TODO handle network errors
         error = response.error;
-        console.log(response)
         if (response.token) {
             $session.token = response.token;
             goto('/overview');
